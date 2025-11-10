@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pridham's EMT Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="loading">
+    <div class="main-content">
+
+        <header class="profile-header">
+            <img src="profile.jpeg" alt="P. Pridham" class="profile-pic">
+            <h1 id="greeting-message"></h1> 
+        </header>
+
+        <section class="intro-section">
+            <h2>HII ! I AM PRIDHAM !!</h2>
+            <p class="statement">
+                BTECH pursuer with interest in hardware and software domains, 
+                with a goal towards solving day-to-day problems and extending the ideas.
+            </p>
+        </section>
+
+        <section class="interests-section">
+            <h2 class="section-title">💖 Core Interests</h2>
+            <div class="interest-grid">
+                <span class="interest-tag">AI</span>
+                <span class="interest-tag">EMBEDDED SYSTEMS</span>
+                <span class="interest-tag">IOT</span>
+                <span class="interest-tag">WEB DEVELOPMENT</span>
+                <span class="interest-tag">VLSI</span>
+            </div>
+        </section>
+
+                     
+  <a href="PDMPDF.pdf" target="_blank" class="pdf-link">
+                    View Full Project Report (PDMpdf.pdf)
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function updateGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            const body = document.body;
+            let greeting;
+
+            if (hour >= 5 && hour < 12) {
+                greeting = "☀️ Good Morning!";
+                body.classList.add('morning-theme');
+            } else if (hour >= 12 && hour < 18) {
+                greeting = "☕ Good Afternoon!";
+                body.classList.add('afternoon-theme');
+            } else {
+                greeting = "🌙 Good Evening!";
+                body.classList.add('evening-theme');
+            }
+
+            document.getElementById('greeting-message').textContent = greeting;
+            
+            // Remove loading class after greeting is set for animation
+            setTimeout(() => {
+                body.classList.remove('loading');
+            }, 100); 
+        }
+
+        updateGreeting();
+    </script>
+</body>
+</html>
